@@ -122,6 +122,12 @@ print(z7)
 good<- complete.cases(z7) ##选择表Z7中所有完整的行，标记为TRUE
 print(z7[good])
 
-
-
-
+week1quiz= read_csv("C:/Users/lxy75/Desktop/hw1_data.csv")
+good<- complete.cases(week1quiz)
+gw1q <- week1quiz[good,]
+#ss1 <- subset(gw1q, gw1q$Ozone > 31 & gw1q$Temp > 90, select = c(gw1q$Solar.R))
+attach(gw1q)
+ss1 <- gw1q[which(Ozone >31 & Temp > 90),]
+detach(gw1q)
+mean(ss1$Solar.R) 
+mean(week1quiz[which(week1quiz ==6),]$Temp)
