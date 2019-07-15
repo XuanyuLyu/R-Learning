@@ -39,7 +39,6 @@ cacheSolve <- function(y, ...) {
   }
   else{
     data <- y$get()
-    m <- solve(data) %*% data
     y$setInverse(m)
     m
   }
